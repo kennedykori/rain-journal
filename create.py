@@ -2,6 +2,7 @@ class Journal(object):
     """Journal class"""
 
     journal = {}
+    last = {}
 
     def __init__(self):
         super(Journal, self).__init__()
@@ -17,5 +18,7 @@ class Journal(object):
             # prompt user to create an entry
             entries = self.journal[title]
             entries[subtitle] = entry
+            last = {subtitle: entry}
         else:
             print("Journal does not exist. Enter cmd to create a new journal")
+
